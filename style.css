@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: pink;
+    font-family: poppins;
+}
+
+.content {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.inputarea input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+#print {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#statement {
+    font-size: 16px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #d7385c;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+}
