@@ -7,7 +7,8 @@
     <title>Love Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -23,8 +24,30 @@
             <p id="statement"></p>
         </div>
     </div>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
+        function toast(message='Welcome',duration='duration',color='red') {
+            Toastify({
+                text: message,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", 
+                position: "left", 
+                stopOnFocus: true,
+                style: {
+                    background:color ,
+                },
+                onClick: function () { }
+            }).showToast();
+        }
+        let lowProbability = new Audio('Audio/bad-of-love-story-231559.mp3')
+        let fairLove = new Audio('Audio/emotional.mp3')
+        let goodProbability = new Audio('Audio/oh-my-love-247222.mp3')
+        let highCompatibility = new Audio('Audio/my-first.mp3')
+        let perfectCompatibility = new Audio('Audio/your-love-strengthens-me.mp3')
+
         function calculateLove() {
             const name1 = document.getElementById('nameOne').value.trim();
             const name2 = document.getElementById('nameTwo').value.trim();
@@ -37,11 +60,11 @@
 
             // Validation
             if (name1.length < 3) {
-                alert('Your name must be at least 3 characters long.');
+                toast('Your name must be at least 3 characters long.',3000,'red');
                 return;
             }
             if (name2.length < 3) {
-                alert('Your lover\'s name must be at least 3 characters long.');
+                toast('Your lover\'s name must be at least 3 characters long.',3000,'red');
                 return;
             }
 
@@ -52,58 +75,26 @@
             // Relationship statement
             if (random <= 30) {
                 statementElement.innerHTML = "Low Probability of Success.";
+                lowProbability.play()
             } else if (random <= 50) {
                 statementElement.innerHTML = "Fair Probability. Needs Effort!";
+                fairLove.play()
             } else if (random <= 75) {
                 statementElement.innerHTML = "Good Compatibility. Keep it up!";
+                goodProbability.play()
             } else if (random <= 90) {
                 statementElement.innerHTML = "High Compatibility! Looks Promising!";
+                highCompatibility.play()
             } else {
                 statementElement.innerHTML = "Perfect Match! Straight to Marriage!";
+                perfectCompatibility.play()
             }
-
-            function calculateLove() {
-                const name1 = document.getElementById('nameOne').value.trim();
-                const name2 = document.getElementById('nameTwo').value.trim();
-                const printElement = document.getElementById('print');
-                const statementElement = document.getElementById('statement');
-
-                // Clear previous results
-                printElement.innerHTML = "Your Relationship Result Will Appear Here";
-                statementElement.innerHTML = "";
-
-                // Validation
-                if (name1.length < 3) {
-                    alert('Your name must be at least 3 characters long.');
-                    return;
-                }
-                if (name2.length < 3) {
-                    alert('Your lover\'s name must be at least 3 characters long.');
-                    return;
-                }
-
-                // Generate random love percentage
-                const random = Math.floor(Math.random() * 100) + 1; // Range: 1-100
-                printElement.innerHTML = `${name1} and ${name2} have ${random}% love compatibility.`;
-
-                // Relationship statement
-                if (random <= 30) {
-                    statementElement.innerHTML = "Low Probability of Success.";
-                } else if (random <= 50) {
-                    statementElement.innerHTML = "Fair Probability. Needs Effort!";
-                } else if (random <= 75) {
-                    statementElement.innerHTML = "Good Compatibility. Keep it up!";
-                } else if (random <= 90) {
-                    statementElement.innerHTML = "High Compatibility! Looks Promising!";
-                } else {
-                    statementElement.innerHTML = "Perfect Match! Straight to Marriage!";
-                }
-            }
-             // Reset input fields
-             document.getElementById('nameOne').value = '';
-                document.getElementById('nameTwo').value = '';
-
+            // Reset input fields
+            document.getElementById('nameOne').value = '';
+            document.getElementById('nameTwo').value = '';
         }
+
+
     </script>
 </body>
 

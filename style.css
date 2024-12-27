@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: pink;
+    background-color: rgb(212, 109, 126);
     font-family: poppins;
 }
 
@@ -13,7 +13,7 @@ body {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background: #fff;
+    background: #745151;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -41,7 +41,7 @@ h1 {
 #statement {
     font-size: 16px;
     font-style: italic;
-    color: #6c757d;
+    color: #b1beca;
 }
 
 button {
